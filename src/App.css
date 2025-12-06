@@ -1,0 +1,97 @@
+body {
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #F0C14B;
+  color: #131921;
+  border: 1px solid #a88734;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  background-color: #ddb347;
+  color: #131921;
+  transform: scale(1.05);
+}
+
+.btn-warning {
+  background-color: #F0C14B;
+  color: #131921;
+  border: 1px solid #a88734;
+  transition: all 0.2s;
+}
+.btn-warning:hover {
+  background-color: #ddb347;
+  color: #131921;
+  transform: scale(1.05);
+}
+
+/* Cards */
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.navbar {
+  background-color: #131921 !important;
+  padding: 0.5rem 1rem;
+}
+.navbar .nav-link, .navbar .navbar-text {
+  color: #fff !important;
+  font-weight: 500;
+}
+.navbar .btn-warning {
+  color: #131921;
+}
+
+/* Search Input */
+.form-control {
+  border-radius: 0 !important;
+}
+.form-control:focus {
+  border-color: #F0C14B;
+  box-shadow: 0 0 5px #F0C14B;
+}
+
+/* Footer */
+footer {
+  background-color: #131921;
+  color: #fff;
+}
+footer a:hover {
+  color: #F0C14B;
+  text-decoration: underline;
+}
+
+/* Carousel */
+.carousel .card {
+  padding: 1rem;
+  border-radius: 10px;
+}
+.carousel .card:hover {
+  transform: scale(1.05);
+}
+
+/* Popular Products Heading */
+h3 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
