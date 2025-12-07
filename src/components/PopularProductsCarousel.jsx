@@ -8,14 +8,12 @@ function PopularProductsCarousel() {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=12") // top 12 products
+    fetch("https://dummyjson.com/products?limit=12") 
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);
 
   if (!products.length) return <p>Loading popular products...</p>;
-
-  // Split products into groups of 3 for carousel slides
   const chunkSize = 3;
   const slides = [];
   for (let i = 0; i < products.length; i += chunkSize) {
@@ -24,10 +22,7 @@ function PopularProductsCarousel() {
 
   return (
     <div className="container my-5">
-      {/* Title */}
       <h3 className="text-center mb-4 fw-bold">Popular Products</h3>
-
-      {/* Carousel */}
       <Carousel variant="dark" indicators={false}>
         {slides.map((slide, idx) => (
           <Carousel.Item key={idx}>

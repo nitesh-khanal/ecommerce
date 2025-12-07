@@ -8,7 +8,6 @@ function Header() {
 
   const handleSearch = (e) => {
     e.preventDefault(); 
-    // Search exists visually but does nothing
   };
 
   return (

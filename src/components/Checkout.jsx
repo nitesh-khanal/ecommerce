@@ -8,7 +8,7 @@ function Checkout() {
   const handlePlaceOrder = () => {
     if (!cartItems.length) return;
 
-    clearCart(); // Clear cart
+    clearCart(); 
     navigate("/checkout-success", { replace: true });
   };
 
