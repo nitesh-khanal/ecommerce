@@ -1,22 +1,14 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Header() {
   const { user, logout } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    setSearch(params.get("search") || "");
-  }, [location.search]);
-
   const handleSearch = (e) => {
-    e.preventDefault();
-    // always navigate to "/" with query param
-    navigate(`/?search=${encodeURIComponent(search)}`, { replace: true });
+    e.preventDefault(); 
+    // Search exists visually but does nothing
   };
 
   return (
