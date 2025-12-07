@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuth } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
@@ -14,15 +14,13 @@ import Login from './components/Login';
 
 function App() {
   const { user } = useAuth();
-
-  // ProtectedRoute ensures user is logged in for certain pages
   const ProtectedRoute = ({ children }) => {
     return user ? children : <Navigate to="/login" replace />;
   };
 
   return (
     <CartProvider>
-      <BrowserRouter basename='/ecommerce'>
+      <BrowserRouter basename="/ecommerce">
         <Header />
         <div className="container my-5">
           <Routes>
@@ -30,6 +28,7 @@ function App() {
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
+
             <Route
               path="/checkout"
               element={
@@ -38,9 +37,8 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route path="/checkout-success" element={<CheckoutSuccess />} />
 
-            {/* Redirect unknown paths to home to prevent blank pages */}
+            <Route path="/checkout-success" element={<CheckoutSuccess />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
