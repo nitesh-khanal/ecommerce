@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuth } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <CartProvider>
-      <Router>
+      <BrowserRouter basename='/ecommerce'>
         <Header />
         <div className="container my-5">
           <Routes>
@@ -45,7 +45,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
-      </Router>
+      </BrowserRouter>
     </CartProvider>
   );
 }
